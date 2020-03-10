@@ -1,0 +1,244 @@
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://www.pngrepo.com/download/249737/coding-web-development.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Head. Used to add imports, set a lot of 'metatags' and to signal the start of the page. If we want to work with Cookies and other session storage objects, we must put them before the head. -->
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+      <title>JohnPaul Vela</title>
+
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="css/font-awesome.css">
+
+      <!-- Bootstrap core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Material Design Bootstrap -->
+      <link href="css/mdb.min.css" rel="stylesheet">
+
+  	<!-- Code Orange Style Sheet -->
+  	<link href="css/style.css" rel="stylesheet">
+
+  	<!-- Importing CSS files -->
+  	<link href="css/bootstrap-material-design.min.css" rel="stylesheet">
+      <link href="css/ripples.min.css" rel="stylesheet">
+      <link href="css/material-theme.css" rel="stylesheet">
+
+  <!-- SCRIPTS -->
+      <!-- JQuery -->
+      <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+      <!-- Bootstrap tooltips -->
+      <script type="text/javascript" src="js/popper.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <!-- MDB core JavaScript -->
+      <script type="text/javascript" src="js/mdb.min.js"></script>
+  	<!-- Importing JS files -->
+  	<script src="js/jquery-1.11.2.min.js"></script>
+  	<script src="js/material.min.js"></script>
+  	<script src="js/ripples.min.js"></script>
+  	<script src="js/sorttable.js"></script>
+  <!-- Adding script tags for Jquery init of dropdown and material bootstrap -->
+   <script>
+       $(document).ready(function(){
+  		$.material.init();
+      });
+  </script>
+
+  <style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-family:Futura,Verdana;
+
+  }
+
+  .topnav .btn:hover {
+    background-color:white;
+    color:orange;
+  }
+
+
+  .topnav .icon {
+    display: none;
+    color:white;
+  }
+
+  .topnav .active{
+    background-colot:white;
+    color:black;
+  }
+
+  .topnav .active:hover{
+
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+  </style>
+  <div class="topnav" id="myTopnav">
+    <a style="color:white; font-size:20px; padding:10px 10px;">JohnPaul Vela</a>
+    <a href="index.php" class="btn">Home</a>
+    <a href="mail.php"  class="btn">Contact</a>
+    <a href="about.php" class="btn">About</a>
+    <a href="Projects.php" class="btn">Projects</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars" style="font-size:25px; padding-top:7px;"></i>
+    </a>
+  </div>
+
+
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+
+</head>
+
+
+<style>
+        /* TEMPLATE STYLES */
+        .flex-center {
+            color: white;
+            font-family:Futura, Verdana;
+        }
+
+        .niceColor{
+            background-color: rgba(0,0,0,0.5);
+            font-family:Futura, Verdana;
+        }
+
+        .niceColor:hover{
+            transition: background-color 0.2s ease;
+            background-color: white;
+            color:orange;
+        }
+
+        .intro-1 {
+            background: url("giphy.gif")no-repeat center center;
+            background-size: cover;
+        }
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+
+            color: #fff !important;
+        }
+
+        .quickLink{
+            background-color:black;
+            color:white;
+        }
+
+        .quickLink:hover{
+            background-color:white;
+            color:orange;
+        }
+
+</style>
+<body>
+	<header>
+	 <!--Intro Section-->
+        <section class="view intro-1 hm-black-strong">
+            <div style = "background-color: rgba(0,0,0,0);"class="full-bg-img flex-center">
+                <div class="container">
+                    <ul text-decoration:none;>
+                        <li>
+                            <h1 class="h1-responsive font-bold wow fadeInDown" data-wow-delay="0.2s">JohnPaul Vela</h1></li>
+
+                        <li>
+                            <a target="_blank" href="about.php" class="btn niceColor wow fadeInRight" data-wow-delay="0.2s" rel="nofollow">Hi, I am JohnPaul and I am a 15 year<br/> old software engineer.</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+	</header>
+    <!-- Main container-->
+    <div class="container">
+
+        <div class="divider-new pt-5">
+            <h2 style="color:Black;"><b>Quick Links<b></h2>
+        </div>
+
+        <!--Section: Best features-->
+        <section id="best-features">
+
+            <div class="row pt-3">
+
+                <div class="col-lg-3 mb-r">
+					<a href="about.php" class="btn quickLink">About</a>
+                </div>
+
+                <div class="col-lg-3 mb-r">
+					<a href="mail.php" class="btn quickLink">Contact</a>
+                </div>
+
+
+            </div>
+
+        </section>
+        <!--/Section: Best features-->
+
+    </div>
+    <!--/ Main container-->
+    <!-- Animations init-->
+    <script>
+        new WOW().init();
+    </script>
+<!--<iframe src="silence.mp3" allow="autoplay" style="display:none" id="audio"></iframe>
+<audio id="player" autoplay loop><source src="rain-06.mp3" type="audio/mp3"></audio>
+
+<!--iframe src="rain-06.mp3" allow="autoplay" loop="true"; style="display:none" id="iframeAudio"-->
+</iframe>
+</body>
+
+</html>
