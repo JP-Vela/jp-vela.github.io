@@ -16,6 +16,9 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
+  <script type="text/javascript">//alert('Hello');</script>
+
+  </script>
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>
@@ -25,25 +28,25 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
   <!--NavBar-->
-    <nav class="navbar navbar-expand-lg navbar-dark black">
-        <a class="navbar-brand" href="#">JP Vela</a>
+    <nav class="navbar navbar-expand-lg navbar-dark black" style="position:fixed; top:0; left:0; width:100%;">
+        <a class="navbar-brand" href="#">JohPaul Vela</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                   <a class="nav-link waves-effect waves-light" href="#">Home <span class="sr-only">(current)</span></a>
+                   <a class="nav-link waves-effect waves-light" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">My Work</a>
+                    <a class="nav-link waves-effect waves-light" href="myWork.html">My Work</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">About</a>
+                    <a class="nav-link waves-effect waves-light" href="about.html">About</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">Contact</a>
+                    <a class="nav-link waves-effect waves-light" href="contact.html">Contact</a>
                 </li>
             </ul>
             <form class="form-inline">
@@ -57,9 +60,78 @@
 </head>
 
 <body>
+<div class="firstPage">
+<div class="imageOverlay">
+               <!-- Content -->
+               <div class="container" style="position:relative;top:25%;">
+                 <!--Grid row-->
+                 <div class="row">
+                   <!--Grid column-->
+                   <div class="col-md-12 mb-4 white-text text-center">
+                     <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>JohnPaul Vela</strong></h1>
+                     <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+                     <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Programming in General</strong></h5>
+                     <p class="btn wow fadeInDown Hover" data-wow-delay="0.4s">My Work</p>
+                     <p class="btn wow fadeInDown Hover" data-wow-delay="0.4s">About me</p>
+                   </div>
+                   <!--Grid column-->
+                 </div>
+                 <!--Grid row-->
+               </div>
+               <!-- Content -->
+</div>
+</div>
 
-  <h1 class="navBar">Hello World</h1>
+<div class="secondPage">
+
+</div>
 
 </body>
 
+<style>
+  body, html{
+    height: 100%;
+  }
+
+  .imageOverlay{
+      height:100%;
+      width:100%;
+      background-color:rgba(0,0,0,0.4);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  .firstPage{
+    background-image: url("img/images/shway2.jpg");
+
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  .secondPage{
+    background-image: url("img/images/shway.jpg");
+
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .Hover:hover{
+    background-color:rgba(255,255,255,0.8);
+    color:rgba(0,0,0,0.7);
+  }
+
+  .Hover{
+    border:2px solid white;
+    border-radius:3px;
+    font-weight:bold;
+  }
+</style>
 </html>
