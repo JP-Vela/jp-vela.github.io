@@ -1,6 +1,8 @@
 .all{
   height:100%;
+
   width:100%;
+  /*height:auto;*/
 }
 
 body, html{
@@ -23,4 +25,24 @@ body, html{
 
 .aestheticness{
   color:rgb(10,200,200);
+}
+
+.nav-link{
+  color:rgb(10,200,200);
+}
+
+.lightMode{
+  color:black;
+}
+
+.darkMode{
+  color:white;
+}
+
+.darkModeB{
+  background-color:rgb(20,20,23);
+}
+
+.lightModeB{
+  background-color:white;
 }

@@ -27,6 +27,9 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
+  <script type="text/javascript" src="modeChanger.js"></script>
+
+
   <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-dark black" style="position:fixed; top:0; left:0; width:100%;">
         <a class="navbar-brand" href="#">JohnPaul Vela</a>
@@ -48,6 +51,10 @@
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="contact.html">Contact</a>
                 </li>
+
+                <li class="nav-item" style="background-color:white; border-radius:4px;margin-left:15px;">
+                    <a class="nav-link waves-effect waves-light" onclick="toggleMode();" style="color:black;">Dark/Light Mode</a>
+                </li>
             </ul>
             <form class="form-inline">
                 <div class="md-form my-0">
@@ -64,14 +71,22 @@
 <h1><br/><br/></h1>
   <h1 class="header" style="color:rgb(240,70,100);">A bit about me...</h1>
   <br/>
-  <p class="header left" style="width:50%;">This year, 2020 will mark my fourth year since I started learning to code. I am JohnPaul, I am 16 years old, and I started out with the basics of block based programming, then I went on to learn Javascript. It was a exciting and sometimes frustraiting as I learned these new concepts. Over time I wanted to do more projects which required different languages, so I went on to learn HTML, CSS, PHP, Java, and Python.<span style="color:rgba(0,0,0,0.7); "><br/><br/><span class="aestheticness">What Type of Experience Do I Have?</span> <br/>My programming experiences involve, full stack web development, robotics, home automation, and basic machine-learning.<br/><br/> <span  class="aestheticness">What Resources Have I Used?</span> <br/>More specifically on the web side of things, I have used the Node JS runtime environment, Materal Deisgn Bootstrap, Firebase, PHP, and mySQL with PHP.</p>
-  <div class="right" style="margin-right:3%"></span>
+  <p class="header left" style="width:50%;">This year, 2020 will mark my fourth year since I started learning to code. I am JohnPaul, I am 16 years old, and
+    I started out with the basics of block based programming, then I went on to learn Javascript. It was exciting and sometimes frustraiting as I learned these
+     new concepts. Over time I wanted to do more projects which required different languages, so I went on to learn HTML, CSS, PHP, Java, and Python.<span><br/>
+       <br/><span class="aestheticness">What Type of Experience Do I Have?</span> <br/>My programming experiences involve, full stack web development, robotics,
+       home automation, and basic machine-learning.<br/><br/> <span  class="aestheticness">What Resources Have I Used?</span> <br/>More specifically on the web
+       side of things, I have used the Node JS runtime environment, Materal Deisgn Bootstrap, Firebase, PHP, and mySQL with PHP. <br/><br/> <span  class="aestheticness">
+         What Else Can I Do?</span><br/>Besides programming, I speak Spanish, and I am currently learning Mandarin Chinese, someday, I hope to be fluent. I
+          program a lot on my freetime but in addition, I also like to make sculptures.<span>
+</p>
+  <div class="right" style="margin-right:3%">
   <img class="img example z-depth-5" src="img/images/coolpic.jpg"/>
+
   </div>
-  <br/>
+
 </div>
-
-
+<!--<button class="btn" style="float:left" onclick="toggleMode();">Mode</button>-->
 
 </body>
 
@@ -81,6 +96,12 @@
     font-family:Monaco, monospace;
     display: inline-block;
   }
-
 </style>
+
+<script type="text/javascript">
+
+
+</script>
+
+</script>
 </html>
