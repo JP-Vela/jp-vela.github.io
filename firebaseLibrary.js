@@ -15,11 +15,35 @@
   firebase.analytics();
 
 
-  function writeUserData(name, email, message) {
-    firebase.database().ref('users/'+name).set({
+function writeUserData(name, email, message) {
+  firebase.database().ref('users/'+name).once('value').then(function(data) {
+    if(data.exists()){
+      //console.log(data.val());
+      firebase.database().ref('users/'+name).set({
       username: name,
       email: email,
-      message: message,
+      message: data.val().message+("---"+message),
+    }, function(error) {
+    if (error) {
+      alert("Sorry, a technical issue happened and your message could not be sent.");
+    } else {
+      alert("It worked! I will get back to you as soon as I can.");
+    }
     });
-  }
+
+    } else {
+      firebase.database().ref('users/'+name).set({
+        username: name,
+        email: email,
+        message: message,
+      }, function(error) {
+      if (error) {
+        alert("Sorry, a technical issue happened and your message could not be sent.");
+      } else {
+        alert("It worked! I will get back to you as soon as I can.");
+      }
+      });
+    }
+  });
+}
 //  writeUserData("dude","myemail");
