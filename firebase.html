@@ -1,0 +1,35 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDSC8XR8gI7n3BEPtQifpuOse82yiBl-kc",
+    authDomain: "feisty-oxide-236718.firebaseapp.com",
+    databaseURL: "https://feisty-oxide-236718.firebaseio.com",
+    projectId: "feisty-oxide-236718",
+    storageBucket: "feisty-oxide-236718.appspot.com",
+    messagingSenderId: "11072209267",
+    appId: "1:11072209267:web:b6cf54951d78f169b30506",
+    measurementId: "G-6HFMEPMMZ4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+  function writeUserData(name, email) {
+    firebase.database().ref('users').set({
+      username: name,
+      email: email,
+    });
+  }
+  writeUserData("tes","test");
+</script>
