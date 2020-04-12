@@ -1,49 +1,36 @@
 
   // Your web app's Firebase configuration
+  // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyDSC8XR8gI7n3BEPtQifpuOse82yiBl-kc",
-    authDomain: "feisty-oxide-236718.firebaseapp.com",
-    databaseURL: "https://feisty-oxide-236718.firebaseio.com",
-    projectId: "feisty-oxide-236718",
-    storageBucket: "feisty-oxide-236718.appspot.com",
-    messagingSenderId: "11072209267",
-    appId: "1:11072209267:web:b6cf54951d78f169b30506",
-    measurementId: "G-6HFMEPMMZ4"
+    apiKey: "AIzaSyA-ViQfuJax2qgSsCmrXkU62n1GgzdPiEA",
+    authDomain: "bright-calculus-192808.firebaseapp.com",
+    databaseURL: "https://bright-calculus-192808.firebaseio.com",
+    projectId: "bright-calculus-192808",
+    storageBucket: "bright-calculus-192808.appspot.com",
+    messagingSenderId: "473684000709",
+    appId: "1:473684000709:web:ef958d1a68a650753b95ac"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  var app = firebase.initializeApp(firebaseConfig);
 
+//  firebase.analytics();
+  console.log(firebase);
+  var db = firebase.firestore();
+  console.log(); 
+  //var messages = db.collection("users").doc("messages");
+  console.log(db);
+  function writeUserData(name, email, message) {
+     var messageDoc = db.collection("users");
+     messageDoc.add({
+       username: name,
+       email: email,
+       message:message,
+     }).then(function (docRef){
+      console.log("Document written with ID: ", docRef);
+     }).catch(function(e){
+       console.error("Error adding document: ", error);
+       alert("Sorry, there was an error when submitting your form");
+     });
 
-function writeUserData(name, email, message) {
-  firebase.database().ref('users/'+name).once('value').then(function(data) {
-    if(data.exists()){
-      //console.log(data.val());
-      firebase.database().ref('users/'+name).set({
-      username: name,
-      email: email,
-      message: data.val().message+("---"+message),
-    }, function(error) {
-    if (error) {
-      alert("Sorry, a technical issue happened and your message could not be sent.");
-    } else {
-      alert("It worked! I will get back to you as soon as I can.");
-    }
-    });
-
-    } else {
-      firebase.database().ref('users/'+name).set({
-        username: name,
-        email: email,
-        message: message,
-      }, function(error) {
-      if (error) {
-        alert("Sorry, a technical issue happened and your message could not be sent.");
-      } else {
-        alert("It worked! I will get back to you as soon as I can.");
-      }
-      });
-    }
-  });
-}
-//  writeUserData("dude","myemail");
+  }
+//  writeUserData("tes","test");
