@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
 
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
@@ -30,42 +30,29 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
   <style>
-    .nice {
-      font-family: 'Baloo Paaji 2', cursive;
-    }
 
-    .trans--grow{
-  -webkit-transition: width 1s ease-out; /* For Safari 3.1 to 6.0 */
-  transition: width 1s  ease-out;
-  width : 0%;
-}
-
-
-.grow{
-  width:100%;
-}
   </style>
 
   <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-dark black" style="position:fixed; top:0; left:0; width:100%;">
-        <a class="navbar-brand nice" href="#">JohnPaul Vela</a>
+        <a class="navbar-brand nice headerName" href="#">JohnPaul Vela</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                   <a class="nav-link waves-effect waves-light nice" href="index.html">Home <span class="sr-only nice">(current)</span></a>
+                <li class="nav-item">
+                   <a class="nav-link waves-effect nice name" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light nice" href="myWork.html">My Work</a>
+                    <a class="nav-link waves-effect nice name" href="myWork.html">My Work</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light nice" href="about.html">About</a>
+                    <a class="nav-link waves-effect nice name" href="about.html">About</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-ligh nicet" href="contact.html">Contact</a>
+                    <a class="nav-link waves-effect nice name" href="contact.html">Contact</a>
                 </li>
             </ul>
             <form class="form-inline">
@@ -87,11 +74,11 @@
                  <div class="row">
                    <!--Grid column-->
                    <div class="col-md-12 mb-4 white-text text-center">
-                     <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown nice" data-wow-delay="0.3s"><strong>JohnPaul Vela</strong></h1>
+                     <h1 class="h1-reponsive coolTransition text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown nice" id="name" data-wow-delay="0.3s"><strong>JohnPaul Vela</strong></h1>
                      <!--hr class="hr-light my-4 wow fadeInDown" id="animated" data-wow-delay="0.4s"-->
                    <hr class="trans--grow my-4 hr-light" id="hrline"/>
                     
-                     <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Web , Java, Javascript, and Python Programming</strong></h5>
+                     <h5 class="text-uppercase mb-4 white-text wow fadeInDown nice" data-wow-delay="0.4s"><strong>Web , Java, Javascript, and Python Programming</strong></h5>
                      <a href="myWork.html" style="color:white;"><p class="btn wow fadeInDown Hover" data-wow-delay="0.4s">My Work</p></a>
                      <!--<p class="btn wow fadeInDown Hover" data-wow-delay="0.4s">My Skills</p>-->
                      <a href="about.html" style="color:white;"><p class="btn wow fadeInDown Hover" data-wow-delay="0.4s">About me</p></a>
@@ -107,11 +94,11 @@
 <script>
   setTimeout(function() {
     document.getElementById('hrline').classList.add('grow');
-    
+    document.getElementById('name').classList.add('nameColor');
   }, 10);
 </script>
 
-<div class="secondPage">
+<div class="secondPage imageOverlay">
 
 </div>
 
@@ -132,7 +119,7 @@
   }
 
   .firstPage{
-    background-image: url("img/images/cool.jpg");
+    background-image: url("img/images/cool3.png");
 
     height: 100%;
     /* Center and scale the image nicely */
@@ -143,7 +130,7 @@
   }
 
   .secondPage{
-    background-image: url("img/images/shway.jpg");
+    background-image: url("img/images/cool2.jpg");
 
     height: 100%;
     /* Center and scale the image nicely */
