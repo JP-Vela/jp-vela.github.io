@@ -29,7 +29,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
-  <script type="text/javascript" src="modeChanger.js"></script>
+  <script type="text/javascript" src="darkLight.js"></script>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -57,6 +57,11 @@
             <li class="nav-item">
                 <a class="nav-link waves-effect nice name" href="contact.html">Contact</a>
             </li>
+
+            <li class="nav-item">
+              <!--<a class="nav-link waves-effect nice name" onclick="toggleMode();">LightDark</a>-->
+              <button type="button" class="btn white px-3" onclick="toggleMode();"><i class="fas fa-moon" id="toggler" aria-hidden="true"></i></button>
+            </li>
         </ul>
         <form class="form-inline">
             <div class="md-form my-0">
@@ -68,12 +73,12 @@
 
 </head>
 
-<body>
+<body id="lightDarkB">
 <div class="all container">
 <h1><br/><br/></h1>
   <h1 class="header" style="color:rgb(240,70,100);">A bit about me...</h1>
   <br/>
-  <p class="header left" style="width:50%;">This year, 2020 will mark my fourth year since I started learning to code. I am JohnPaul, I am 16 years old, and
+  <p class="header left" style="width:50%;" id="lightDarkF">This year, 2020 will mark my fourth year since I started learning to code. I am JohnPaul, I am 16 years old, and
     I started out with the basics of block based programming, then I went on to learn Javascript. It was exciting and sometimes frustraiting as I learned these
      new concepts. Over time I wanted to do more projects which required different languages, so I went on to learn HTML, CSS, PHP, Java, and Python.<span><br/>
        <br/><span class="aestheticness">What Type of Experience Do I Have?</span> <br/>My programming experiences involve, full stack web development, robotics,
