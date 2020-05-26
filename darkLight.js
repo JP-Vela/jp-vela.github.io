@@ -32,16 +32,26 @@ function toggleMode(){
 toggleMode()
 //Make the page light mode
 function lightMode(){
-    document.getElementById(modeBackgroundId).style.backgroundColor=lightBackgroundStyle;
-    document.getElementById(modeForegroundId).style.color=lightForegroundStyle;
+    try {
+        document.getElementById(modeBackgroundId).style.backgroundColor=lightBackgroundStyle;
+    } catch { console.log("");}
+    
+    try {
+        document.getElementById(modeForegroundId).style.color=lightForegroundStyle;
+    } catch { console.log("");}
 
     toggleButton.className="fas fa-moon";
 }
 
 //Make the page dark mode
 function darkMode(){
-    document.getElementById(modeBackgroundId).style.backgroundColor=darkBackgroundStyle;
-    document.getElementById(modeForegroundId).style.color=darkForegroundStyle;
-
+    try {
+        document.getElementById(modeBackgroundId).style.backgroundColor=darkBackgroundStyle;
+    } catch { console.log("");}
+    
+    try {
+        document.getElementById(modeForegroundId).style.color=darkForegroundStyle;
+    } catch { console.log("");}
+    
     toggleButton.className="far fa-moon";
 }
