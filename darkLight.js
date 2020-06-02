@@ -34,11 +34,11 @@ toggleMode()
 function lightMode(){
     try {
         document.getElementById(modeBackgroundId).style.backgroundColor=lightBackgroundStyle;
-    } catch { console.log("");}
+    } catch (err) { console.log(err);}
     
     try {
         document.getElementById(modeForegroundId).style.color=lightForegroundStyle;
-    } catch { console.log("");}
+    } catch (err) { console.log(err);}
 
     toggleButton.className="fas fa-moon";
 }
@@ -47,11 +47,11 @@ function lightMode(){
 function darkMode(){
     try {
         document.getElementById(modeBackgroundId).style.backgroundColor=darkBackgroundStyle;
-    } catch { console.log("");}
+    } catch (err) { console.log(err);}
     
     try {
         document.getElementById(modeForegroundId).style.color=darkForegroundStyle;
-    } catch { console.log("");}
-    
+    } catch (err) { console.log(err);}
+
     toggleButton.className="far fa-moon";
 }
