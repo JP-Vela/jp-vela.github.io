@@ -5,13 +5,14 @@ var height = getHeight();
 var populationVals = [];
 var generation = 1;
 
+var boardSize = 10;
 
 function initGrid(){
 
-    for(var i=0;i<4;i++){
+    for(var i=0;i<boardSize;i++){
         var tempPopVals = [];
 
-        for(var j=0;j<4;j++){
+        for(var j=0;j<boardSize;j++){
             
             if(Math.random()<0.3){
                 tempPopVals[j]=1;
@@ -45,11 +46,11 @@ function drawBoard(){
     
     //var tempPopVals = [];
         
-    for(var i=0;i<4;i++){
+    for(var i=0;i<boardSize;i++){
         
-        for(var j=0;j<4;j++){
+        for(var j=0;j<boardSize;j++){
             
-            var cell = new Rectangle(width/4,height/4);
+            var cell = new Rectangle(width/boardSize,height/boardSize);
 
 
             if(populationVals[j][i]==1){
@@ -138,15 +139,15 @@ function isAlive(x,y){
 function progress(){
     var nextGen = [];
     for(var i =0;i<populationVals.length;i++){
-        nextGen.push(new Array(4));
+        nextGen.push(new Array(boardSize));
         for(var j = 0;j<populationVals[i].length;j++){
             nextGen[i][j]=0;
         }
     }
     
     
-    for(var i = 0;i<4;i++){
-        for(var j = 0;j<4;j++){
+    for(var i = 0;i<boardSize;i++){
+        for(var j = 0;j<boardSize;j++){
             if(isAlive(i,j)){
                 nextGen[j][i]=1;
             } else {
