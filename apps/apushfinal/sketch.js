@@ -43,7 +43,7 @@ speed:8
 
 
 //var backgroundImgUrl = "https://i0.wp.com/www.tokkoro.com/picsup/5709841-cosmos-wallpapers.jpg";
-var backgroundImgUrl = "http://2.bp.blogspot.com/-af7h99sy1Wc/UwJGw_6yoaI/AAAAAAAAFBw/Dpra4P5Pgq4/s1600/MAC_Space_Background.jpg";
+var backgroundImgUrl = "https://2.bp.blogspot.com/-af7h99sy1Wc/UwJGw_6yoaI/AAAAAAAAFBw/Dpra4P5Pgq4/s1600/MAC_Space_Background.jpg";
 //var backgroundImgUrl = "https://earthsky.org/upl/2020/01/Earth-atmosphere-space-e1578380239539.jpg";
 
 var backgroundIMG;
