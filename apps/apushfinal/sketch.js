@@ -42,7 +42,10 @@ speed:8
 }
 
 
-var backgroundImgUrl = "https://i0.wp.com/www.tokkoro.com/picsup/5709841-cosmos-wallpapers.jpg";
+//var backgroundImgUrl = "https://i0.wp.com/www.tokkoro.com/picsup/5709841-cosmos-wallpapers.jpg";
+var backgroundImgUrl = "http://2.bp.blogspot.com/-af7h99sy1Wc/UwJGw_6yoaI/AAAAAAAAFBw/Dpra4P5Pgq4/s1600/MAC_Space_Background.jpg";
+//var backgroundImgUrl = "https://earthsky.org/upl/2020/01/Earth-atmosphere-space-e1578380239539.jpg";
+
 var backgroundIMG;
 
 function preload() {
@@ -286,6 +289,7 @@ function draw() {
 
   function updateDiaglogue(){
     //textFont(zekton);
+    fill(255);
     text(window.dialogue,30,30);
     
     textSize(25);
@@ -314,18 +318,18 @@ function draw() {
     }*/
 
     fill( redNoise,0,0);
-    //stroke(redNoise,0,0);
-    rect(0,h-statusHeight, indicatorWidth, indicatorHeight,10);
+    stroke(255);
+    rect(10,h-statusHeight-20, indicatorWidth, indicatorHeight,10);
 
 
     fill(0,greenNoise,0);
-    //stroke(0,greenNoise,0);
-    rect(0,h-statusHeight+indicatorHeight, indicatorWidth, indicatorHeight,10);
+    stroke(255);
+    rect(10,h-statusHeight+indicatorHeight-10, indicatorWidth, indicatorHeight,10);
 
  
 
     stroke(0, 0, 150);
-    fill(255);
+    fill(0);
 
     text("Temperature: "+Math.round(greenNoise/255*100)+"%", indicatorWidth+indicatorWidth/2, height-statusHeight+indicatorHeight*1.5);
     textSize(25);
