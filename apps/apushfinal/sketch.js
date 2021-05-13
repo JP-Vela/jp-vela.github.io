@@ -47,7 +47,10 @@ var backgroundIMG;
 
 function preload() {
   img = loadImage(imgURL1);
-  zekton = loadFont('http://db.onlinewebfonts.com/t/e96bcdc01bcbbb755b76df5a8a0b3e08.ttf');
+  zektonUrl = "https://jp-vela.github.io/apps/apushfinal/assets/zekton.ttf";
+  //zektonUrl = "http://db.onlinewebfonts.com/t/e96bcdc01bcbbb755b76df5a8a0b3e08.ttf";
+  zekton = loadFont(zektonUrl);
+
 
   backgroundIMG = loadImage(backgroundImgUrl);
 }
