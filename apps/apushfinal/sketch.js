@@ -30,7 +30,7 @@ let zekton;
 
 //shuttle variables
 let img;
-let reagan;
+//let reagan;
 
 let imgURL1 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle2.png?token=AGASEBX4NAJAMM2PHCW7JRTAUK24M";
 let imgURL2 = "https://image.flaticon.com/icons/png/512/124/124584.png";
@@ -40,6 +40,8 @@ let imgURL4 = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/maste
 //8bit
 
 let reaganURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reagan.png";
+let reaganSuprisedURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reaganSuprised.jpg";
+
 
 var rocketSize = 250;
 //var rocketSize = 190; //8bit
@@ -66,7 +68,7 @@ var backgroundIMG;
 
 function preload() {
   img = loadImage(imgURL3);
-  reagan = loadImage(reaganURL);
+  window.reagan = loadImage(reaganURL);
   zektonUrl = "https://jp-vela.github.io/apps/apushfinal/assets/zekton.ttf";
   //zektonUrl = "http://db.onlinewebfonts.com/t/e96bcdc01bcbbb755b76df5a8a0b3e08.ttf";
   zekton = loadFont(zektonUrl);
@@ -295,6 +297,7 @@ function draw() {
       setShuttleY(getShuttleY()-shuttleCoords.speed);
       setShuttleX(getShuttleX()-shuttleCoords.speed);
       shuttleCoords.speed-=0.1;
+      window.reagan = loadImage(reaganSuprisedURL); 
     }
 
 
