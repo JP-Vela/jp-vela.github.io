@@ -22,6 +22,7 @@ var blueNoise
 
 //Diaglogue area
 window.dialogue="Preparing to launch..."
+window.altitude = 0;
 
 var button;// = createButton('LAUNCH');
 
@@ -33,6 +34,9 @@ let imgURL1 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shut
 let imgURL2 = "https://image.flaticon.com/icons/png/512/124/124584.png";
 let imgURL3 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle3.png?token=AGASEBV2I7CYPQMACDNSXI3AUK3HC";
 var rocketSize = 250;
+
+
+
 var shuttleCoords = {
 
 
@@ -198,7 +202,7 @@ function setup() {
     button.style('font-size', 30 + 'px');
     button.style('font-family',"Verdana");
     button.style('background-color',color(0,90,255));
-    button.style('border-color',color(255,0,0));
+    button.style('border-color',color(255));
     button.style('color', color(255,255,255));
 
     setShuttleY(height-rocketSize);
@@ -210,9 +214,9 @@ function setup() {
   
 function draw() {
     
-    background(color(20,20,30));
-    image(backgroundIMG,0,0,w,h);
-
+    //background(color(20,20,30));
+    //image(backgroundIMG,0,0,w,h);
+    background(backgroundIMG);
     settings.meteor.draw();
     
    // img.resize(window.rocketSize,window.rocketSize);
@@ -223,6 +227,7 @@ function draw() {
 
     updateDiaglogue();
 
+    window.altitude = ( height - (height-getShuttleY()) );
   }
 
 
@@ -292,6 +297,12 @@ function draw() {
     fill(255);
     text(window.dialogue,30,30);
     
+    textSize(25);
+
+
+
+    text(window.altitude,width-100,30);
+
     textSize(25);
     //textFont();
   }
