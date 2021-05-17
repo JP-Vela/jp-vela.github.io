@@ -39,11 +39,14 @@ let imgURL3 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shut
 let imgURL4 = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/8bit%20shuttle2.png";
 //8bit
 
-let reaganURL = "https://toppng.com/uploads/preview/ronald-reagan-11549009525umxpyjjn7l.png";
+let reaganURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reagan.png";
 
 var rocketSize = 250;
 //var rocketSize = 190; //8bit
 var rocketTail = 26;
+
+var reaganSize = 200;
+window.reaganText = "You got this!!";
 
 
 var shuttleCoords = {
@@ -71,23 +74,6 @@ function preload() {
 
   backgroundIMG = loadImage(backgroundImgUrl);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //--------------------------------------------------------
@@ -237,6 +223,8 @@ function draw() {
 
     updateDiaglogue();
 
+    updateReagan();
+
     window.altitude = Math.round((height-getShuttleY()) - rocketSize + rocketTail);
   }
 
@@ -275,8 +263,15 @@ function draw() {
 
 
   function updateReagan(){
-    reagan.resize(40,40);
-    image(reagan,40,40);
+    reagan.resize(reaganSize,reaganSize);
+    image(reagan,w-reaganSize-80,90);
+
+    fill(255);
+    rect(w-reaganSize-85,reaganSize+100,190,50);
+ 
+    fill(0);
+    text(window.reaganText,w-reaganSize-80,reaganSize+130);
+
   }
 
 
