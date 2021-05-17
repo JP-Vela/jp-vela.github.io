@@ -9,6 +9,8 @@ var statusWidth = 70;
 var indicatorHeight = 100;
 var indicatorWidth = statusWidth;
 
+window.gameStatus = 0;
+
 var temp = 0;
 var wind = 0;
 
@@ -21,12 +23,14 @@ var redNoise;
 var blueNoise
 
 //Diaglogue area
-window.dialogue="Preparing to launch..."
+window.dialogue="Preparing to launch...\nLaunch when all telemetry is over 50%"
 window.altitude = 0;
 
 var button;// = createButton('LAUNCH');
 
 let zekton;
+
+window.explosion=false;
 
 //shuttle variables
 let img;
@@ -42,7 +46,7 @@ let imgURL4 = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/maste
 let reaganURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reagan.png";
 let reaganSuprisedURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reaganSuprised.png";
 
-let explosionURL = "";
+let explosionURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/explosion.png";
 
 var rocketSize = 250;
 //var rocketSize = 190; //8bit
@@ -51,6 +55,8 @@ var rocketTail = 26;
 var reaganSize = 200;
 window.reaganText = "You got this!!";
 
+
+window.failed = false;
 
 var shuttleCoords = {
 
@@ -63,7 +69,9 @@ speed:8
 
 //var backgroundImgUrl = "https://i0.wp.com/www.tokkoro.com/picsup/5709841-cosmos-wallpapers.jpg";
 var backgroundImgUrl = "https://2.bp.blogspot.com/-af7h99sy1Wc/UwJGw_6yoaI/AAAAAAAAFBw/Dpra4P5Pgq4/s1600/MAC_Space_Background.jpg";
+
 //var backgroundImgUrl = "https://earthsky.org/upl/2020/01/Earth-atmosphere-space-e1578380239539.jpg";
+//var backgroundImgUrl = "https://cdn.arstechnica.net/wp-content/uploads/2020/05/img_1179.jpg";
 
 var backgroundIMG;
 
@@ -81,6 +89,12 @@ function preload() {
   backgroundIMG = loadImage(backgroundImgUrl);
 }
 
+
+function mouseClicked() {
+  if(gameStatus!=0){
+    location.reload();
+  }
+}
 
 //--------------------------------------------------------
 var settings = {
@@ -199,13 +213,14 @@ function setup() {
     
     button = createButton('LAUNCH');
     
-    button.position(width/2-button.width, 10);
     button.mousePressed(launch);
     button.style('font-size', 30 + 'px');
     button.style('font-family',"Verdana");
     button.style('background-color',color(0,90,255));
     button.style('border-color',color(255));
     button.style('color', color(255,255,255));
+    button.position(width/2-button.width, 10);
+
 
     setShuttleY(height-rocketSize+rocketTail);
     setShuttleX(width/2-rocketSize/2);
@@ -216,23 +231,58 @@ function setup() {
   
 function draw() {
     
-    //background(color(20,20,30));
-    //image(backgroundIMG,0,0,w,h);
+
     background(backgroundIMG);
-    settings.meteor.draw();
     
-   // img.resize(window.rocketSize,window.rocketSize);
+    if(!window.failed){
+      settings.meteor.draw();
+    }
 
-    updateStatus();
 
-    updateShuttle();
 
-    updateDiaglogue();
 
-    updateReagan();
+    if(gameStatus==0){
 
-    window.altitude = Math.round((height-getShuttleY()) - rocketSize + rocketTail);
+      updateStatus();
+
+      updateReagan();
+
+
+      updateShuttle();
+
+      updateDiaglogue();
+
+
+      window.altitude = Math.round((height-getShuttleY()) - rocketSize + rocketTail);
+
+
+    } else if(gameStatus==1){
+      wonGame();
+    } else if(gameStatus==2){
+      lostGame();
+    }
+
+
+
   }
+
+
+  function wonGame(){
+    fill(0,50,90);
+    textSize(50);
+    textAlign(CENTER, TOP);
+
+    text("You won!\nclick anywhere to play again", w/2,h/2);
+  }
+
+  function lostGame(){
+    fill(0,50,90);
+    textSize(50);
+    textAlign(CENTER,TOP);
+
+    text("You lost!\nclick anywhere to try again",w/2,h/2);
+  }
+
 
 
   function launch(){
@@ -272,19 +322,18 @@ function draw() {
     reagan.resize(reaganSize,reaganSize);
     suprisedReagan.resize(reaganSize,reaganSize);
 
-    if(window.launching!=2){
+    if(!window.explosion){
       image(window.reagan,w-reaganSize-80,90);
 
     } else {
       image(window.suprisedReagan,w-reaganSize-80,90);
-      window.reaganText = "Oh no!"
 
     }
     fill(255);
-    rect(w-reaganSize-85,reaganSize+100,190,50);
+    rect(w-reaganSize-85,reaganSize+100,190,50,10);
  
     fill(0);
-    text(window.reaganText,w-reaganSize-80,reaganSize+130);
+    text(window.reaganText,w-reaganSize-77,reaganSize+130);
 
   }
 
@@ -293,34 +342,59 @@ function draw() {
     img.resize(window.rocketSize,window.rocketSize);
    window.explosionImg.resize(window.rocketSize,window.rocketSize);
     //shuttleCoords.shuttleX=width/2-rocketSize/2;
-    var explosion = false;
     
 
     //Launch animation
     if(launching==1 && (getShuttleY()) > (-rocketSize) ){
       setShuttleY(getShuttleY()-shuttleCoords.speed);
+    } else if(launching==1){
+      window.gameStatus=1;
     }
 
     if(launching==3 && (getShuttleY()) < (height+rocketSize)){
       setShuttleY(getShuttleY()-shuttleCoords.speed);
+      shuttleCoords.speed-=0.1;
       
-      if(shuttleCoords.speed>=0){
-        shuttleCoords.speed-=0.1;
-      } else {
+      if(shuttleCoords.speed<=0){
         //console.log("ok");
-        explosion = true;
+        window.explosion = true;
+        window.reaganText = "Oh no!"
+        window.failed = true;
       }
       
+
+    } else if(launching==3){
+      window.gameStatus=2;
 
     }
 
     if(launching==2 && (getShuttleY()) < (height+rocketSize)){
       setShuttleY(getShuttleY()-shuttleCoords.speed);
-      setShuttleX(getShuttleX()-shuttleCoords.speed);
       shuttleCoords.speed-=0.1;
+
+      if(shuttleCoords.speed<0){
+        //console.log("ok");
+        window.explosion = true;
+        window.reaganText = "Oh no!"
+        window.failed = true;
+
+      } else {
+        setShuttleX(getShuttleX()-shuttleCoords.speed);
+
+      }
       //window.reagan = loadImage(reaganSuprisedURL);
+    } else if (launching==2) {
+      window.gameStatus=2;
     }
 
+
+    if(launching==4 && (getShuttleY()) < (height)){
+      setShuttleY(getShuttleY()+shuttleCoords.speed);
+      window.explosion=true;  
+      window.reaganText="Oh no!";
+    } else if (launching==4){
+      window.gameStatus=2;
+    }
 
 
     if(!explosion){
@@ -340,7 +414,7 @@ function draw() {
     textSize(25);
 
 
-
+    fill(255);
     text(window.altitude,width-100,30);
 
     textSize(25);
