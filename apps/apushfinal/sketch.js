@@ -89,14 +89,14 @@ function preload() {
 
   backgroundIMG = loadImage(backgroundImgUrl);
 }
-/*
 
-function mouseClicked() {
+
+function mousePressed() {
   if(gameStatus!=0){
     location.reload();
   }
 }
-*/
+
 //--------------------------------------------------------
 var settings = {
   meteor: {
