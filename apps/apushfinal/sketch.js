@@ -1,3 +1,4 @@
+
 var w = window.innerWidth-20;
 var h = window.innerHeight-20;
 
@@ -88,14 +89,14 @@ function preload() {
 
   backgroundIMG = loadImage(backgroundImgUrl);
 }
-
+/*
 
 function mouseClicked() {
   if(gameStatus!=0){
     location.reload();
   }
 }
-
+*/
 //--------------------------------------------------------
 var settings = {
   meteor: {
@@ -443,17 +444,17 @@ function draw() {
     }*/
 
     fill( redNoise,0,0);
-    stroke(255);
+    //stroke(255);
     rect(10,h-statusHeight-20, indicatorWidth, indicatorHeight,10);
 
 
     fill(0,greenNoise,0);
-    stroke(255);
+    //stroke(255);
     rect(10,h-statusHeight+indicatorHeight-10, indicatorWidth, indicatorHeight,10);
 
  
 
-    stroke(0, 0, 150);
+    //stroke(0, 0, 150);
     fill(0);
 
     text("Temperature: "+Math.round(greenNoise/255*100)+"%", indicatorWidth+indicatorWidth/2, height-statusHeight+indicatorHeight*1.5);
