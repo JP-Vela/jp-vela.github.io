@@ -40,8 +40,9 @@ let imgURL4 = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/maste
 //8bit
 
 let reaganURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reagan.png";
-let reaganSuprisedURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reaganSuprised.jpg";
+let reaganSuprisedURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reaganSuprised.png";
 
+let explosionURL = "";
 
 var rocketSize = 250;
 //var rocketSize = 190; //8bit
@@ -69,6 +70,9 @@ var backgroundIMG;
 function preload() {
   img = loadImage(imgURL3);
   window.reagan = loadImage(reaganURL);
+  window.suprisedReagan = loadImage(reaganSuprisedURL);
+  window.explosionImg = loadImage(explosionURL);
+
   zektonUrl = "https://jp-vela.github.io/apps/apushfinal/assets/zekton.ttf";
   //zektonUrl = "http://db.onlinewebfonts.com/t/e96bcdc01bcbbb755b76df5a8a0b3e08.ttf";
   zekton = loadFont(zektonUrl);
@@ -250,8 +254,8 @@ function draw() {
       } else if(!(redNoise>128) && greenNoise>128){
         tempLaunch=3;
         //Temperature too bad
-        console.log("O-ring shattered");
-        window.dialogue="An o-ring shattered!";
+        console.log("O-ring gass leak!");
+        window.dialogue="O-ring gass leak!";
       }
       
       else {
@@ -266,8 +270,16 @@ function draw() {
 
   function updateReagan(){
     reagan.resize(reaganSize,reaganSize);
-    image(reagan,w-reaganSize-80,90);
+    suprisedReagan.resize(reaganSize,reaganSize);
 
+    if(window.launching!=2){
+      image(window.reagan,w-reaganSize-80,90);
+
+    } else {
+      image(window.suprisedReagan,w-reaganSize-80,90);
+      window.reaganText = "Oh no!"
+
+    }
     fill(255);
     rect(w-reaganSize-85,reaganSize+100,190,50);
  
@@ -279,8 +291,9 @@ function draw() {
 
   function updateShuttle(){
     img.resize(window.rocketSize,window.rocketSize);
+   window.explosionImg.resize(window.rocketSize,window.rocketSize);
     //shuttleCoords.shuttleX=width/2-rocketSize/2;
-
+    var explosion = false;
     
 
     //Launch animation
@@ -290,18 +303,31 @@ function draw() {
 
     if(launching==3 && (getShuttleY()) < (height+rocketSize)){
       setShuttleY(getShuttleY()-shuttleCoords.speed);
-      shuttleCoords.speed-=0.1;
+      
+      if(shuttleCoords.speed>=0){
+        shuttleCoords.speed-=0.1;
+      } else {
+        //console.log("ok");
+        explosion = true;
+      }
+      
+
     }
 
     if(launching==2 && (getShuttleY()) < (height+rocketSize)){
       setShuttleY(getShuttleY()-shuttleCoords.speed);
       setShuttleX(getShuttleX()-shuttleCoords.speed);
       shuttleCoords.speed-=0.1;
-      window.reagan = loadImage(reaganSuprisedURL); 
+      //window.reagan = loadImage(reaganSuprisedURL);
     }
 
 
-    image(img, getShuttleX(),getShuttleY());
+
+    if(!explosion){
+      image(img, getShuttleX(),getShuttleY());
+    } else {
+      image(window.explosionImg, getShuttleX(),getShuttleY());
+    }
     //console.log(shuttleCoords.shuttleY);
   }
 
