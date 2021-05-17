@@ -30,11 +30,20 @@ let zekton;
 
 //shuttle variables
 let img;
+let reagan;
+
 let imgURL1 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle2.png?token=AGASEBX4NAJAMM2PHCW7JRTAUK24M";
 let imgURL2 = "https://image.flaticon.com/icons/png/512/124/124584.png";
 let imgURL3 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle3.png?token=AGASEBV2I7CYPQMACDNSXI3AUK3HC";
-var rocketSize = 250;
 
+let imgURL4 = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/8bit%20shuttle2.png";
+//8bit
+
+let reaganURL = "https://toppng.com/uploads/preview/ronald-reagan-11549009525umxpyjjn7l.png";
+
+var rocketSize = 250;
+//var rocketSize = 190; //8bit
+var rocketTail = 26;
 
 
 var shuttleCoords = {
@@ -53,7 +62,8 @@ var backgroundImgUrl = "https://2.bp.blogspot.com/-af7h99sy1Wc/UwJGw_6yoaI/AAAAA
 var backgroundIMG;
 
 function preload() {
-  img = loadImage(imgURL1);
+  img = loadImage(imgURL3);
+  reagan = loadImage(reaganURL);
   zektonUrl = "https://jp-vela.github.io/apps/apushfinal/assets/zekton.ttf";
   //zektonUrl = "http://db.onlinewebfonts.com/t/e96bcdc01bcbbb755b76df5a8a0b3e08.ttf";
   zekton = loadFont(zektonUrl);
@@ -205,7 +215,7 @@ function setup() {
     button.style('border-color',color(255));
     button.style('color', color(255,255,255));
 
-    setShuttleY(height-rocketSize);
+    setShuttleY(height-rocketSize+rocketTail);
     setShuttleX(width/2-rocketSize/2);
 
     frameRate(30);
@@ -227,7 +237,7 @@ function draw() {
 
     updateDiaglogue();
 
-    window.altitude = ( height - (height-getShuttleY()) );
+    window.altitude = Math.round((height-getShuttleY()) - rocketSize + rocketTail);
   }
 
 
@@ -261,6 +271,12 @@ function draw() {
       }
 
       window.launching = tempLaunch;
+  }
+
+
+  function updateReagan(){
+    reagan.resize(40,40);
+    image(reagan,40,40);
   }
 
 
