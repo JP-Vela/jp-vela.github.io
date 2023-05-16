@@ -27,6 +27,10 @@ body, html{
   color:rgb(10,200,200);
 }
 
+.redtext{
+  color:rgb(240,70,100) !important;
+}
+
 .nav-link{
   color:rgb(10,200,200);
 }
