@@ -31,10 +31,6 @@ body, html{
   color:rgb(240,70,100) !important;
 }
 
-.nav-link{
-  color:rgb(10,200,200);
-}
-
 .lightMode{
   color:black;
 }
@@ -56,6 +52,10 @@ body, html{
 .nice {
   font-family: 'Baloo Paaji 2', cursive;
 
+}
+
+.black{
+  background-color: rgb(20,20,30) !important;
 }
 
 .trans--grow{
@@ -101,7 +101,9 @@ border-radius: 3px;
 }
 
 .name:hover{
-color:black;
-background-color: rgba(255,255,255,0.3);
+  color:rgb(240,70,100) !important;
 }
 
+.headerName:hover{
+  color:rgb(10,200,200) !important;
+}
