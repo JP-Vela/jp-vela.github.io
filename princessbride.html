@@ -1,91 +1,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 <body>
-  <div class="top-bar">
-    <span class="page-info">Page <span class="page-num"></span>of <span id="page-count"> </span></span>
-   
-    <div class="options">
-        <label for="names" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Quizes:</label>
-        <select id="quizzes" onchange="updatePDF()"></select>
-    </div>
-   <br/>
-    <canvas id="pdf-render"></canvas>
+  <br/>
+  <br/>
+  <h4 class="font">Sorryy</h4>
+  <p class="font">Cleaning up this website so I took down the quiz PDFs 😬</p>
 
-    </div>
-  <script src = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.7.570/build/pdf.min.js"> </script>
-  <script src="pdf2.js"></script>
+  <a href="index.html" class="font">Home</a>
 
   <style>
-      span{
-          visibility: hidden;
-      }
+    .font{
+      font-family:Arial, Helvetica, sans-serif;
+      display:block;
+      text-align: center;
+      color:white
+    }
 
-      #pdf-render{
-        border: 2px solid black;
-        border-radius: 8px;
-        width:fit-content;
-        height:fit-content;
-        display:block;
-        margin-left:auto;
-        margin-right:auto;
-
-        box-shadow: 10px 10px 10px black;
-      }
-
-      #quizzes{
-        font-weight: bold;
-        padding: 5px 5px 5px 5px;
-        border-color:brown;
-      }
-
-      .top_bar{
-        display:block;
-        margin-left:auto;
-        margin-right:auto;
-      }
-
-      .options{
-          width:fit-content;
-          display:block;
-          margin-left: auto;
-          margin-right: auto;
-          
-          font-family: 'Courier New', Courier, monospace;
-      }
+    body{
+      background-color: rgb(30,30,38);
+    }
   </style>
-
-
-
-<script>
-    path = "https://jp-vela.github.io/pdfs/quiz";
-    extension = ".pdf";
-
-    quizNames = {
-        a: "73-94",
-        b: "93-120",
-        c: "120-152",
-        d: "186-218",
-        e: "221-254",
-        f: "254-288",
-        g: "291-325",
-        h: "325-358"
-    };
-
-    names = Object.entries(quizNames);
-    list = document.getElementById("quizzes")
-
-    for(i=0;i < names.length;i++){
-        var option = document.createElement("option");
-        option.text = "Quiz pg. "+names[i][1];
-        option.value=names[i][1];
-        list.add(option);
-    }
-
-    function updatePDF(){
-        //var strUser = list.options[list.selectedIndex].text;
-        var pageNum = list.value;
-        quizPath = path+pageNum+extension;
-        changePDF(quizPath);
-    }
-</script>
-  <a href="https://jp-vela.github.io/" style="font-family:verdana">Home</a>
 </body>

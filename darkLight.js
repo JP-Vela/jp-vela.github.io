@@ -29,7 +29,7 @@ function toggleMode(){
     }
 }
 
-toggleMode()
+//toggleMode()
 //Make the page light mode
 function lightMode(){
     try {
@@ -41,6 +41,7 @@ function lightMode(){
     } catch (err) { console.log(err);}
 
     toggleButton.className="fas fa-moon";
+    mode=1
 }
 
 //Make the page dark mode
@@ -54,4 +55,5 @@ function darkMode(){
     } catch (err) { console.log(err);}
 
     toggleButton.className="far fa-moon";
+    mode=-1
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head><title>Open Light Auto Example</title></head>
+
+<script src="openLight.js"></script>
+<html>
+    <body class="lightDarkB light">
+        <div>
+            <p>Some text</p>
+            <h3 class="override">This text won't change because it overrides</h3>
+            <h1>This example uses OpenLight in auto mode</p>
+
+            <button id="toggler" onclick="openLight.toggleMode();">Toggle</button>
+        </div>
+    </body>
+    
+    <style>
+        /*some extra styles*/
+        @font-face {
+            /* font from https://fonts.google.com/specimen/Roboto+Mono */
+            font-family: "RobotoMono";
+            src: url("Roboto_Mono/RobotoMono-Thin.ttf");
+        }
+
+        p {
+            font-family: RobotoMono;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-family: RobotoMono;
+            font-weight: bold;
+        }
+
+        button {
+            font-family: RobotoMono;
+            font-weight: bold;
+            font-size:13px;
+        }
+
+        div {
+            margin-left:20px;
+            margin-top:20px;
+        }
+
+        .override {
+            color:rgb(240,70,100);
+            font-family: RobotoMono;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        //Create OpenLight object
+        openLight = new OpenLight("auto");
+
+        //use openLight.addBackgroundTag("some tag") to use currently unsupported tags
+
+        //Adds override to the list of classes that shouldn't use dark mode
+        openLight.addOverrideByClassName("override");
+        
+        //Changing the default colors
+        openLight.openLightColors = {
+            darkBackgroundStyle: "rgb(30,30,38)",
+            lightBackgroundStyle: "rgb(255,255,255)",
+            darkForegroundStyle: "rgb(240,240,250)",
+            lightForegroundStyle: "rgb(30,30,40)"
+        }
+
+        //Initialize after settings are set
+        openLight.init();
+    </script>
+</html>
