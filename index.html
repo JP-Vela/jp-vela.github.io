@@ -100,8 +100,6 @@
   }, 10);
 </script>
 
-<!--<div class="secondPage imageOverlay">-->
-
 </div>
 
 </body>
@@ -121,7 +119,8 @@
   }
 
   .firstPage{
-    background-image: url("img/images/shway.jpg");
+    /*background-image: url("img/images/shway.jpg");*/
+    background-image: url("img/images/minimalLandscape.jpg");
 
     height: 100%;
     /* Center and scale the image nicely */
@@ -129,20 +128,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-  }
-
-  .secondPage{
-    background-image: url("img/images/shway.jpg");
-
-    height: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .Hover:hover{
-    background-color: rgba(20,20,30, 0.7);
+    background-color: rgba(20,20,35, 0.3);
     color: rgb(240,70,100);
     border-color: rgb(10,200,200);
     /*color:rgba(0,0,0,0.7);*/
@@ -167,8 +156,9 @@
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   //🗿
-  words = "Yes,-------- I'm prg---<---ogrann---<--<--m-m-ing---- on ash--<--p-halt------  (----------->---------)".split("")
-  sleep(randomNumber(2000,5000)).then(() => {
+  //words = "Yes,-------- I'm prg---<---ogrann---<--<--m-m-ing---- on ash--<--p-halt------  (----------->---------)".split("")
+  words = "We-lo-cme--<<<-<--co--me to --my we-b-si--te.------- -I ma-de it --myself-----------  (----------->-----)".split("")
+  sleep(randomNumber(1000,3000)).then(() => {
     element.innerHTML=""
     recursivePaste(0)
   })
