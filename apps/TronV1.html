@@ -61,10 +61,19 @@
   font-family: 'Inter-Loom';
 
   src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2') format('woff2');
-}</style></head>
+}
+
+</style>
+
+<style>
+	#Canvas{
+		border-radius: 10px;
+	}
+</style>
+</head>
 <body data-gr-c-s-loaded="true">
 	<h2 style="font-family: futura; margin-left: 10px"><span style="color: #0a92aa; font-size: 25px">Tron</span><span id="scoreLabel" style="font-family: futura; font-size: 16px; font-weight: lighter; padding-left: 5%;">Score-Red: 0 Score-Blue: 0</span>
-		<span><button style="margin-left: 5%; padding: 10px; font-family: futura; font-weight: bold;background-color: #3bc9e2; letter-spacing: 1px" onclick="setup()">Start</button></span><span id="countDown" style="padding-left: 3%"></span></h2><hr>
+		<span><button style="margin-left: 5%; padding: 10px; font-family: futura; font-weight: bold;background-color: #3bc9e2; letter-spacing: 1px; border:2px solid black; border-radius: 5px;" onclick="setup()">Start</button></span><span id="countDown" style="padding-left: 3%"></span></h2><hr>
 
 
 	<canvas id="Canvas" width="1100" height="600" style="border: 1px solid; display: block; margin-right: auto; margin-left: auto;"></canvas>
@@ -285,8 +294,8 @@ function gameStep () {
 
 function countDownStep(i) {
 	setTimeout(function() {
-		document.getElementById("countDown").innerHTML = i+1;
-		if(i >= 0) {
+		document.getElementById("countDown").innerHTML = i;
+		if(i >= 1) {
 			countDownStep(i-1);
 		} else {
 			gameStep();
