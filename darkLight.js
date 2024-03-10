@@ -32,6 +32,7 @@ function toggleMode(){
 //toggleMode()
 //Make the page light mode
 function lightMode(){
+    toggleButton = document.getElementById("toggler");
     try {
         document.getElementById(modeBackgroundId).style.backgroundColor=lightBackgroundStyle;
     } catch (err) { console.log(err);}
@@ -46,6 +47,7 @@ function lightMode(){
 
 //Make the page dark mode
 function darkMode(){
+    toggleButton = document.getElementById("toggler");
     try {
         document.getElementById(modeBackgroundId).style.backgroundColor=darkBackgroundStyle;
     } catch (err) { console.log(err);}
