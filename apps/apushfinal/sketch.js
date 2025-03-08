@@ -37,11 +37,11 @@ window.explosion=false;
 let img;
 //let reagan;
 
-let imgURL1 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle2.png?token=AGASEBX4NAJAMM2PHCW7JRTAUK24M";
+let imgURL1 = "assets/tests/shuttle2.png";//"https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle2.png?token=AGASEBX4NAJAMM2PHCW7JRTAUK24M";
 let imgURL2 = "https://image.flaticon.com/icons/png/512/124/124584.png";
-let imgURL3 = "https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle3.png?token=AGASEBV2I7CYPQMACDNSXI3AUK3HC";
+let imgURL3 = "assets/tests/shuttle3.png";//"https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle3.png?token=AGASEBV2I7CYPQMACDNSXI3AUK3HC";
 
-let imgURL4 = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/8bit%20shuttle2.png";
+let imgURL4 = "assets/8bit shuttle2.png";//"https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/8bit%20shuttle2.png";
 //8bit
 
 let reaganURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reagan.png";
