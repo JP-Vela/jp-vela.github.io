@@ -24,7 +24,7 @@ var redNoise;
 var blueNoise
 
 //Diaglogue area
-window.dialogue="Preparing to launch...\nLaunch when all telemetry is over 50%"
+window.dialogue="Preparing to launch...\nLaunch when all metrics are over 50%"
 window.altitude = 0;
 
 var button;// = createButton('LAUNCH');
@@ -38,16 +38,16 @@ let img;
 //let reagan;
 
 let imgURL1 = "assets/tests/shuttle2.png";//"https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle2.png?token=AGASEBX4NAJAMM2PHCW7JRTAUK24M";
-let imgURL2 = "https://image.flaticon.com/icons/png/512/124/124584.png";
+// let imgURL2 = "https://image.flaticon.com//icons/png/512/124/124584.png";
 let imgURL3 = "assets/tests/shuttle3.png";//"https://raw.githubusercontent.com/JP-Vela/homeworkApp/master/shuttle3.png?token=AGASEBV2I7CYPQMACDNSXI3AUK3HC";
 
-let imgURL4 = "assets/8bit shuttle2.png";//"https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/8bit%20shuttle2.png";
+// let imgURL4 = "assets/8bit shuttle2.png";//"https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/8bit%20shuttle2.png";
 //8bit
 
-let reaganURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reagan.png";
-let reaganSuprisedURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/reaganSuprised.png";
+let reaganURL = "assets/reagan.png";
+let reaganSuprisedURL = "assets/reaganSuprised.png";
 
-let explosionURL = "https://raw.githubusercontent.com/JP-Vela/jp-vela.github.io/master/apps/apushfinal/assets/explosion.png";
+let explosionURL = "assets/explosion.png";
 
 var rocketSize = 250;
 //var rocketSize = 190; //8bit
@@ -68,11 +68,11 @@ speed:8
 }
 
 
-//var backgroundImgUrl = "https://i0.wp.com/www.tokkoro.com/picsup/5709841-cosmos-wallpapers.jpg";
-var backgroundImgUrl = "https://2.bp.blogspot.com/-af7h99sy1Wc/UwJGw_6yoaI/AAAAAAAAFBw/Dpra4P5Pgq4/s1600/MAC_Space_Background.jpg";
+// var backgroundImgUrl = "https://i0.wp.com/www.tokkoro.com/picsup/5709841-cosmos-wallpapers.jpg";
+var backgroundImgUrl = "assets/Space_Background.jpg";
 
-//var backgroundImgUrl = "https://earthsky.org/upl/2020/01/Earth-atmosphere-space-e1578380239539.jpg";
-//var backgroundImgUrl = "https://cdn.arstechnica.net/wp-content/uploads/2020/05/img_1179.jpg";
+// var backgroundImgUrl = "https://earthsky.org/upl/2020/01/Earth-atmosphere-space-e1578380239539.jpg";
+// var backgroundImgUrl = "https://cdn.arstechnica.net/wp-content/uploads/2020/05/img_1179.jpg";
 
 var backgroundIMG;
 
@@ -82,7 +82,7 @@ function preload() {
   window.suprisedReagan = loadImage(reaganSuprisedURL);
   window.explosionImg = loadImage(explosionURL);
 
-  zektonUrl = "https://jp-vela.github.io/apps/apushfinal/assets/zekton.ttf";
+  zektonUrl = "assets/zekton.ttf";
   //zektonUrl = "http://db.onlinewebfonts.com/t/e96bcdc01bcbbb755b76df5a8a0b3e08.ttf";
   zekton = loadFont(zektonUrl);
 
